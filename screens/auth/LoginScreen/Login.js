@@ -41,7 +41,7 @@ function Login({navigation}) {
                         uncheckedIcon='circle-o' size={25} containerStyle={{ width: 25, margin: 0, padding: 0, backgroundColor: '#f9f9f9' }} wrapperStyle={{ margin: 0, padding: 0, marginLeft: -9, }} />
                     <Text style={[login.checker_title, { color: checked == false ? colors.nega : colors.primary }]}>Remember me</Text>
                 </View>
-                <Text style={login.checker_title_2}>Forgot password?</Text>
+                <Text style={login.checker_title_2} onPress={()=>{navigation.navigate('ForgotPassword')}}>Forgot password?</Text>
 
             </View>
 
@@ -69,10 +69,10 @@ export default Login
 const loginStyle = StyleSheet.create({
     container: {
         backgroundColor: colors.background,
-        display: 'flex', justifyContent: 'center',
+        display: 'flex',
         alignItems: 'center',
         height: '100%',
-        paddingTop: 20,
+        paddingTop: '20%',
         paddingLeft: 25,
         paddingRight: 25
     },

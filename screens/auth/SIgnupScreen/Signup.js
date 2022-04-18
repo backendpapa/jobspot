@@ -15,10 +15,14 @@ function Signup({navigation}) {
     return (
         <View style={login.container}>
             <View style={{ marginBottom: '20%' }}>
-                <Text style={login.login_text_1}>Welcome Back</Text>
+                <Text style={login.login_text_1}>Create an Account</Text>
                 <Text style={login.login_text_2}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</Text>
             </View>
             <View style={{ width: '100%' }}>
+
+            <Text style={login.login_email_label}>Full name</Text>
+                <TextInput keyboardType="default" style={login.login_email_input} placeholder="Enter full name" placeholderTextColor={'#c0c0c0'} />
+
                 <Text style={login.login_email_label}>Email</Text>
                 <TextInput keyboardType="email-address" style={login.login_email_input} placeholder="Enter valid email address" placeholderTextColor={'#c0c0c0'} />
 
@@ -41,7 +45,7 @@ function Signup({navigation}) {
                         uncheckedIcon='circle-o' size={25} containerStyle={{ width: 25, margin: 0, padding: 0, backgroundColor: '#f9f9f9' }} wrapperStyle={{ margin: 0, padding: 0, marginLeft: -9, }} />
                     <Text style={[login.checker_title, { color: checked == false ? colors.nega : colors.primary }]}>Remember me</Text>
                 </View>
-                <Text style={login.checker_title_2}>Forgot password?</Text>
+                <Text style={login.checker_title_2} onPress={()=>{navigation.navigate('ForgotPassword')}}>Forgot password?</Text>
 
             </View>
 
@@ -52,11 +56,11 @@ function Signup({navigation}) {
 
                 <TouchableOpacity activeOpacity={0.8} style={[login.button, { backgroundColor: colors.tertiary, flexDirection: 'row' }]}>
                     <Image style={{ height: 30 }} resizeMode={'contain'} resizeMethod={"scale"} source={google} />
-                    <Text style={{ color: colors.primary, fontFamily: fonts.DmSans_Bold, fontSize: sizes.h14, marginLeft: -5 }}> SIGN IN WITH GOOGLE</Text>
+                    <Text style={{ color: colors.primary, fontFamily: fonts.DmSans_Bold, fontSize: sizes.h14, marginLeft: -5 }}> SIGN UP WITH GOOGLE</Text>
                 </TouchableOpacity>
             </View>
             <View>
-                <Text style={{ fontFamily: DmSans_Regular, fontSize: sizes.h12 }}>You dont have an account yet? <Text style={{ color: colors.ultra }}>Sign up</Text></Text>
+                <Text style={{ fontFamily: DmSans_Regular, fontSize: sizes.h12 }}>Already have an account yet? <Text onPress={()=>{navigation.navigate('Login')}} style={{ color: colors.ultra }}>Sign in</Text></Text>
             </View>
 
         </View>
@@ -68,10 +72,10 @@ export default Signup
 const loginStyle = StyleSheet.create({
     container: {
         backgroundColor: colors.background,
-        display: 'flex', justifyContent: 'center',
+        display: 'flex',
         alignItems: 'center',
         height: '100%',
-        paddingTop: 20,
+        paddingTop: '20%',
         paddingLeft: 25,
         paddingRight: 25
     },

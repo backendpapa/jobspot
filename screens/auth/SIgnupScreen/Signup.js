@@ -7,7 +7,7 @@ import { DmSans_Bold, DmSans_Regular } from "../../../constant/fonts";
 import google from '../../../assets/images/google.png'
 
 
-function Login({navigation}) {
+function Signup({navigation}) {
     const [showPassword, setShowPassword] = React.useState(false)
     const [checked, setChecked] = React.useState(false)
 
@@ -56,15 +56,14 @@ function Login({navigation}) {
                 </TouchableOpacity>
             </View>
             <View>
-                <Text style={{ fontFamily: DmSans_Regular, fontSize: sizes.h12 }}>You dont have an account yet? <Text onPress={()=>{navigation.navigate('Signup')}} style={{ color: colors.ultra }}>Sign up</Text></Text>
+                <Text style={{ fontFamily: DmSans_Regular, fontSize: sizes.h12 }}>You dont have an account yet? <Text style={{ color: colors.ultra }}>Sign up</Text></Text>
             </View>
 
         </View>
     )
 }
 
-export default Login
-
+export default Signup
 
 const loginStyle = StyleSheet.create({
     container: {

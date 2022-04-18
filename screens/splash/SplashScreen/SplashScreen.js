@@ -43,7 +43,7 @@ const SplashStyle=StyleSheet.create({
         paddingTop:20,
         paddingLeft:25,
         paddingRight:25,
-        backgroundColor:'#f9f9f9',
+        backgroundColor:colors.background,
         height:'100%'
     },
     splash_text_1:{

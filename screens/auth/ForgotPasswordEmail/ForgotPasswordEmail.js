@@ -28,7 +28,7 @@ function ForgotPasswordEmail({route,navigation}){
                 </TouchableOpacity>
             </View>
             <View>
-                <Text style={{ fontFamily: fonts.DmSans_Regular, fontSize: sizes.h12 }}>You have not received an email? <Text onPress={()=>{navigation.navigate('ForgotPasswordEmail')}} style={{ color: colors.ultra }}>Resend</Text></Text>
+                <Text style={{ fontFamily: fonts.DmSans_Regular, fontSize: sizes.h12 }}>You have not received an email? <Text onPress={()=>{navigation.navigate('ForgotPassword')}} style={{ color: colors.ultra }}>Resend</Text></Text>
             </View>
         </View>
     )

@@ -46,7 +46,7 @@ function Login({navigation}) {
             </View>
 
             <View style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 40 }}>
-                <TouchableOpacity activeOpacity={0.8} style={[login.button, { backgroundColor: colors.primary }]}>
+                <TouchableOpacity onPress={()=>{navigation.navigate('HomeScreen')}} activeOpacity={0.8} style={[login.button, { backgroundColor: colors.primary }]}>
                     <Text style={{ color: 'white', fontFamily: fonts.DmSans_Bold, fontSize: sizes.h14 }}>LOGIN</Text>
                 </TouchableOpacity>
 

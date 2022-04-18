@@ -23,6 +23,7 @@ import Home from './screens/Home/HomeScreen/HomeScreen';
 
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Description from './screens/Home/DescriptionScreen/DescriptionScreen';
 
 
 const Tab = createBottomTabNavigator();
@@ -52,7 +53,7 @@ function App() {
         <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
         <Stack.Screen name="ForgotPasswordEmail" component={ForgotPasswordEmail} />
         <Stack.Screen name="ForgotPasswordSuccess" component={ForgotPasswordSuccess} />
-       
+        <Stack.Screen name="Description" component={Description} />
         <Stack.Screen name="HomeScreen" component={MyTabs} />
       </Stack.Navigator>
     </NavigationContainer>

@@ -17,8 +17,8 @@ import SplashScreen from './screens/splash/SplashScreen/SplashScreen';
 import Login from './screens/auth/LoginScreen/Login';
 import Signup from './screens/auth/SIgnupScreen/Signup';
 import ForgotPassword from './screens/auth/ForgotPassword/ForgotPassword';
-ForgotPasswordEmail
 import ForgotPasswordEmail from './screens/auth/ForgotPasswordEmail/ForgotPasswordEmail';
+import ForgotPasswordSuccess from './screens/auth/ForgotPasswordSuccess/ForgotPasswordSuccess';
 
 
 
@@ -39,6 +39,7 @@ function App() {
         <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
         <Stack.Screen name="ForgotPasswordEmail" component={ForgotPasswordEmail} />
+        <Stack.Screen name="ForgotPasswordSuccess" component={ForgotPasswordSuccess} />
       </Stack.Navigator>
     </NavigationContainer>
   );

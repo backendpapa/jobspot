@@ -4,5 +4,6 @@ module.exports={
     tertiary:"#D6CDFE",
     ultra:"#FCA34D",
     background:"#f9f9f9",
-    nega:"#aaa6b9"
+    nega:"#aaa6b9",
+    sega:"#afecfe"
 }

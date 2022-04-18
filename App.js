@@ -19,11 +19,22 @@ import Signup from './screens/auth/SIgnupScreen/Signup';
 import ForgotPassword from './screens/auth/ForgotPassword/ForgotPassword';
 import ForgotPasswordEmail from './screens/auth/ForgotPasswordEmail/ForgotPasswordEmail';
 import ForgotPasswordSuccess from './screens/auth/ForgotPasswordSuccess/ForgotPasswordSuccess';
+import Home from './screens/Home/HomeScreen/HomeScreen';
 
 
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 
+const Tab = createBottomTabNavigator();
 
+function MyTabs() {
+  return (
+    <Tab.Navigator screenOptions={{headerShown:false}}>
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Settings" component={Signup} />
+    </Tab.Navigator>
+  );
+}
 
 
 
@@ -34,12 +45,15 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown:false}}>
+      
         <Stack.Screen name="Welcome" component={SplashScreen} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
         <Stack.Screen name="ForgotPasswordEmail" component={ForgotPasswordEmail} />
         <Stack.Screen name="ForgotPasswordSuccess" component={ForgotPasswordSuccess} />
+       
+        <Stack.Screen name="HomeScreen" component={MyTabs} />
       </Stack.Navigator>
     </NavigationContainer>
   );

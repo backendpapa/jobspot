@@ -10,5 +10,7 @@ module.exports={
     sega:"#afecfe",
     tertiary_deep:"#beaffe",
     ultra_light:"#ffd6ad",
-    infi:"#fde0d5"
+    infi:"#fde0d5",
+    incognito:"#afecfe",
+    grey:"#f2f2f2"
 }

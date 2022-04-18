@@ -16,7 +16,7 @@ function SplashScreen({navigation}){
     const splash=SplashStyle
     return (
         <View  style={splash.splash_container}>
-            <StatusBar backgroundColor={'#f9f9f9'} barStyle={'dark-content'} />
+            <StatusBar backgroundColor={colors.background_2} barStyle={'dark-content'} />
             <Text style={splash.splash_text_1}>Jobspot</Text>
             <View style={{flex:2}} >
                 <Image style={{width:'100%',height:'100%'}} source={splash_1} resizeMode={'contain'} resizeMethod={'scale'}  />

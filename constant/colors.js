@@ -12,5 +12,6 @@ module.exports={
     ultra_light:"#ffd6ad",
     infi:"#fde0d5",
     incognito:"#afecfe",
-    grey:"#f2f2f2"
+    grey:"#f2f2f2",
+    tertiary_light:"#F0EEF8"
 }

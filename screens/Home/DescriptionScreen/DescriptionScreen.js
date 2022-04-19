@@ -222,7 +222,7 @@ function Description() {
             <View style={{position:'absolute',width:'100%',height:70,backgroundColor:colors.background,bottom:0,display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'row'}}>
                 {/* Bottom button */}
                 <Icon name="bookmark-border" color={colors.ultra} style={{marginRight:20}} />
-                <TouchableOpacity onPress={()=>{navigation.navigate('UploadCV')}} style={{height:50,width:'80%',backgroundColor:colors.primary,display:'flex',justifyContent:'center',alignItems:'center'}} activeOpacity={0.8}>
+                <TouchableOpacity onPress={()=>{navigation.navigate('UploadCV')}} style={{height:50,width:'80%',backgroundColor:colors.primary,display:'flex',justifyContent:'center',alignItems:'center',borderRadius:6}} activeOpacity={0.8}>
                         <Text style={[desc.desc_text_3,{color:'white'}]}>APPLY NOW</Text>
                 </TouchableOpacity>
 

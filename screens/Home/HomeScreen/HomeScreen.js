@@ -95,7 +95,7 @@ export default Home;
 
 const homeStyle=StyleSheet.create({
     container:{
-        backgroundColor: colors.background2,
+        backgroundColor: colors.background_2,
         display: 'flex',
         position:'relative',
         height: '100%',

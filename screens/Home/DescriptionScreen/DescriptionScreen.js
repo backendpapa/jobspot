@@ -2,7 +2,10 @@ import React from 'react'
 import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native'
 import { colors, fonts, sizes } from '../../../constant';
 import google from '../../../assets/images/google.png'
-import { color } from '@rneui/base';
+import { color, Icon } from '@rneui/base';
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
+import company1 from '../../../assets/images/company1.png'
+import company2 from '../../../assets/images/company2.png'
 
 
 function Description() {
@@ -30,10 +33,10 @@ function Description() {
 
             <View style={{ paddingLeft: 25, paddingRight: 25,marginTop:10 }}>
                 <View style={{ display: 'flex', flexDirection: 'row', height: 40 }}>
-                    <TouchableOpacity onPress={() => { setInfo(!info) }} activeOpacity={0.8} style={{ height: 40, backgroundColor: info == false ? colors.primary : colors.tertiary_deep, borderRadius: 6, flex: 1, marginRight: 5, justifyContent: 'center', display: 'flex', alignItems: 'center' }}>
+                    <TouchableOpacity onPress={() => { setInfo(false) }} activeOpacity={0.8} style={{ height: 40, backgroundColor: info == false ? colors.primary : colors.tertiary_deep, borderRadius: 6, flex: 1, marginRight: 5, justifyContent: 'center', display: 'flex', alignItems: 'center' }}>
                         <Text style={[desc.desc_text_3, { color: info == false ? 'white' : colors.primary }]}>Description</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity activeOpacity={0.8} onPress={() => { setInfo(!info) }} style={{ height: 40, backgroundColor: info == true ? colors.primary : colors.tertiary_deep, borderRadius: 6, flex: 1, marginLeft: 5, justifyContent: 'center', display: 'flex', alignItems: 'center' }}>
+                    <TouchableOpacity activeOpacity={0.8} onPress={() => { setInfo(true) }} style={{ height: 40, backgroundColor: info == true ? colors.primary : colors.tertiary_deep, borderRadius: 6, flex: 1, marginLeft: 5, justifyContent: 'center', display: 'flex', alignItems: 'center' }}>
                         <Text style={[desc.desc_text_3, { color: info == true ? 'white' : colors.primary }]}>Company</Text>
                     </TouchableOpacity>
                 </View>
@@ -70,7 +73,19 @@ function Description() {
                               </View>  
                               <View style={{marginTop:30}}>
                               <Text style={[desc.desc_text_3,{color:colors.primary}]}>Location</Text>
-                              {/* Map */}
+                              {/* Map */}<MapView
+       provider={PROVIDER_GOOGLE} // remove if not using Google Maps
+        style={{height:200,marginTop:20}}
+        minZoomLevel={10}
+        scrollEnabled={false}
+       region={{
+         latitude: 37.78825,
+         longitude: -122.4324,
+         latitudeDelta: 0.015,
+         longitudeDelta: 0.0121,
+       }}
+     >
+     </MapView>
                               </View>
 
                               <View style={{marginTop:30}}>
@@ -125,7 +140,81 @@ function Description() {
                         </View>
                     ) : (<View style={{marginTop:20}}>
                         {/* Company miniscreen */}
-                        <Text>Company Description</Text>
+                        
+                        <ScrollView showsVerticalScrollIndicator={false} style={{height:520}}>
+                               <View>
+                                    <Text style={[desc.desc_text_3,{color:colors.primary}]}>About Company</Text>
+                                    <Text style={desc.desc_text_4}>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem.</Text>
+                                    <Text style={desc.desc_text_4}>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto.</Text>
+
+                                    <Text style={desc.desc_text_4}>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</Text>
+                                    
+                                  
+                              </View>  
+
+                              <View style={{marginTop:30}}>
+                                    <Text style={[desc.desc_text_3,{color:colors.primary}]}>Website</Text>
+                                    <Text style={[desc.desc_text_4,{color:colors.tertiary_deep}]}>https://www.google.com</Text>
+                                   
+                              </View>  
+                              <View style={{marginTop:30}}>
+                                    <Text style={[desc.desc_text_3,{color:colors.primary}]}>Industry</Text>
+                                    <Text style={[desc.desc_text_4]}>Internet product</Text>
+                                   
+                              </View>  
+                              <View style={{marginTop:30}}>
+                                    <Text style={[desc.desc_text_3,{color:colors.primary}]}>Employmee size</Text>
+                                    <Text style={[desc.desc_text_4]}>132,121 Employees</Text>
+                                   
+                              </View>  
+                              <View style={{marginTop:30}}>
+                                    <Text style={[desc.desc_text_3,{color:colors.primary}]}>Head office</Text>
+                                    <Text style={[desc.desc_text_4]}>Mountain View, Carlifornia, Amerika Serikat</Text>
+                                   
+                              </View>  
+
+                              <View style={{marginTop:30}}>
+                                    <Text style={[desc.desc_text_3,{color:colors.primary}]}>Type</Text>
+                                    <Text style={[desc.desc_text_4]}>Multinational company</Text>
+                                   
+                              </View> 
+                              <View style={{marginTop:30}}>
+                                    <Text style={[desc.desc_text_3,{color:colors.primary}]}>Type</Text>
+                                    <Text style={[desc.desc_text_4]}>Multinational company</Text>
+                                   
+                              </View>
+                              <View style={{marginTop:30}}>
+                                    <Text style={[desc.desc_text_3,{color:colors.primary}]}>Since</Text>
+                                    <Text style={[desc.desc_text_4]}>1998</Text>
+                                   
+                              </View>  
+                              <View style={{marginTop:30}}>
+                                    <Text style={[desc.desc_text_3,{color:colors.primary}]}>Specialization</Text>
+                                    <Text style={[desc.desc_text_4]}>Search technology, Web computing, Software and Online advertising</Text>
+                                   
+                              </View>  
+                             
+
+                              
+                            
+
+                             <View style={{marginBottom:50,marginTop:39}}>
+                             <Text style={[desc.desc_text_3,{color:colors.primary}]}>Specialization</Text>
+                                <View style={{display:'flex',flexDirection:'row'}}>
+                                    <View style={{flex:1,marginRight:4}}>
+                                        <Image style={{width:'100%',height:200}} resizeMode={'contain'}  source={company1}  />
+                                    </View>
+                                    <View style={{flex:1,marginLeft:4}}>
+                                        <Image style={{width:'100%',height:200}} resizeMode={'contain'}  source={company2}  />
+                                        
+                                    </View>
+                                </View>
+                             </View>
+
+
+                              
+                               </ScrollView>
+                        
                         
                     </View>)}
 
@@ -137,8 +226,9 @@ function Description() {
 
 
 
-            <View style={{position:'absolute',width:'100%',height:70,backgroundColor:colors.background,bottom:0,display:'flex',justifyContent:'center',alignItems:'center'}}>
+            <View style={{position:'absolute',width:'100%',height:70,backgroundColor:colors.background,bottom:0,display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'row'}}>
                 {/* Bottom button */}
+                <Icon name="bookmark-border" color={colors.ultra} style={{marginRight:20}} />
                 <TouchableOpacity style={{height:50,width:'80%',backgroundColor:colors.primary,display:'flex',justifyContent:'center',alignItems:'center'}} activeOpacity={0.8}>
                         <Text style={[desc.desc_text_3,{color:'white'}]}>APPLY NOW</Text>
                 </TouchableOpacity>

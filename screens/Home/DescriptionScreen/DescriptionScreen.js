@@ -6,26 +6,23 @@ import { color, Icon } from '@rneui/base';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import company1 from '../../../assets/images/company1.png'
 import company2 from '../../../assets/images/company2.png'
+import { useNavigation } from '@react-navigation/core';
+
 
 
 function Description() {
     const [info, setInfo] = React.useState(false)
+    const navigation = useNavigation(); 
     const desc = descStyle
     return (
         <View style={desc.container}>
-            <View style={{
-                display: 'flex', justifyContent: 'center', alignItems: 'center', paddingLeft: 25,
-                paddingRight: 25, zIndex: 2
-            }}>
-                <View style={{ height: 70, width: 70, backgroundColor: colors.incognito, display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius: 50 }}>
+            <View style={desc.logoContainer}>
+                <View style={desc.logo}>
                     <Image source={google} />
                 </View>
             </View>
 
-            <View style={{
-                height: 130, backgroundColor: colors.grey, paddingLeft: 25,
-                paddingRight: 25, marginTop: -20, padding: 10, display: 'flex', justifyContent: 'center', alignItems: 'center'
-            }}>
+            <View style={desc.header_container}>
 
                 <Text style={desc.desc_text_1}>UI/UX Designer</Text>
                 <Text style={desc.desc_text_2}>Google    <Text style={{ fontSize: 10, textAlignVertical: 'center' }}>{'\u2B24'}</Text>   Carlifornia   <Text style={{ fontSize: 10, textAlignVertical: 'center' }}>{'\u2B24'}</Text>   1 day ago</Text>
@@ -33,10 +30,10 @@ function Description() {
 
             <View style={{ paddingLeft: 25, paddingRight: 25,marginTop:10 }}>
                 <View style={{ display: 'flex', flexDirection: 'row', height: 40 }}>
-                    <TouchableOpacity onPress={() => { setInfo(false) }} activeOpacity={0.8} style={{ height: 40, backgroundColor: info == false ? colors.primary : colors.tertiary_deep, borderRadius: 6, flex: 1, marginRight: 5, justifyContent: 'center', display: 'flex', alignItems: 'center' }}>
+                    <TouchableOpacity onPress={() => { setInfo(false) }} activeOpacity={0.8} style={[desc.tab_button,{backgroundColor: info == false ? colors.primary : colors.tertiary_deep }]}>
                         <Text style={[desc.desc_text_3, { color: info == false ? 'white' : colors.primary }]}>Description</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity activeOpacity={0.8} onPress={() => { setInfo(true) }} style={{ height: 40, backgroundColor: info == true ? colors.primary : colors.tertiary_deep, borderRadius: 6, flex: 1, marginLeft: 5, justifyContent: 'center', display: 'flex', alignItems: 'center' }}>
+                    <TouchableOpacity activeOpacity={0.8} onPress={() => { setInfo(true) }} style={[desc.tab_button,{ backgroundColor: info == true ? colors.primary : colors.tertiary_deep }]}>
                         <Text style={[desc.desc_text_3, { color: info == true ? 'white' : colors.primary }]}>Company</Text>
                     </TouchableOpacity>
                 </View>
@@ -178,11 +175,7 @@ function Description() {
                                     <Text style={[desc.desc_text_4]}>Multinational company</Text>
                                    
                               </View> 
-                              <View style={{marginTop:30}}>
-                                    <Text style={[desc.desc_text_3,{color:colors.primary}]}>Type</Text>
-                                    <Text style={[desc.desc_text_4]}>Multinational company</Text>
-                                   
-                              </View>
+                             
                               <View style={{marginTop:30}}>
                                     <Text style={[desc.desc_text_3,{color:colors.primary}]}>Since</Text>
                                     <Text style={[desc.desc_text_4]}>1998</Text>
@@ -199,7 +192,7 @@ function Description() {
                             
 
                              <View style={{marginBottom:50,marginTop:39}}>
-                             <Text style={[desc.desc_text_3,{color:colors.primary}]}>Specialization</Text>
+                             <Text style={[desc.desc_text_3,{color:colors.primary}]}>Company Gallery</Text>
                                 <View style={{display:'flex',flexDirection:'row'}}>
                                     <View style={{flex:1,marginRight:4}}>
                                         <Image style={{width:'100%',height:200}} resizeMode={'contain'}  source={company1}  />
@@ -229,7 +222,7 @@ function Description() {
             <View style={{position:'absolute',width:'100%',height:70,backgroundColor:colors.background,bottom:0,display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'row'}}>
                 {/* Bottom button */}
                 <Icon name="bookmark-border" color={colors.ultra} style={{marginRight:20}} />
-                <TouchableOpacity style={{height:50,width:'80%',backgroundColor:colors.primary,display:'flex',justifyContent:'center',alignItems:'center'}} activeOpacity={0.8}>
+                <TouchableOpacity onPress={()=>{navigation.navigate('UploadCV')}} style={{height:50,width:'80%',backgroundColor:colors.primary,display:'flex',justifyContent:'center',alignItems:'center'}} activeOpacity={0.8}>
                         <Text style={[desc.desc_text_3,{color:'white'}]}>APPLY NOW</Text>
                 </TouchableOpacity>
 
@@ -249,7 +242,37 @@ const descStyle = StyleSheet.create({
         position: 'relative',
         height: '100%',
         paddingTop: '15%',
-
+    },
+    logoContainer:{
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        paddingLeft: 25,
+        paddingRight: 25, 
+        zIndex: 2
+    },
+    logo:{
+        height: 70, 
+        width: 70, 
+        backgroundColor: colors.incognito, 
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        borderRadius: 50
+    },
+    header_container:{
+        height: 130, 
+        backgroundColor: colors.grey, 
+        paddingLeft: 25,
+        paddingRight: 25, 
+        marginTop: -20, 
+        padding: 10, 
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center'
+    },
+    tab_button:{
+        height: 40, borderRadius: 6, flex: 1, marginRight: 5, justifyContent: 'center', display: 'flex', alignItems: 'center' 
     },
     desc_text_1: {
         fontFamily: fonts.DmSans_Bold,

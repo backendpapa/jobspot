@@ -10,9 +10,12 @@ import DocumentPicker, {
     types,
   } from 'react-native-document-picker'
   import PDF from '../../../assets/images/PDF.png'
+import { useNavigation } from "@react-navigation/core";
+  
 
 
 function UploadCV(){
+    const navigation = useNavigation(); 
     const upload=uploadStyle
     const [result, setResult] = React.useState({})
     const [name,setName]=React.useState("")
@@ -75,7 +78,7 @@ function UploadCV(){
           } catch (e) {
             handleError(e)
           }
-        }} style={{minHeight:100,backgroundColor:selected==true?colors.tertiary_light:'none',orderColor:colors.primary,borderWidth:selected==false?1:0,borderRadius:10,borderStyle:selected==false?"dashed":"solid"}}>
+        }} style={{minHeight:100,backgroundColor:selected==true?colors.tertiary_light:'none',orderColor:colors.primary,borderWidth:selected==false?1:0,borderRadius:25,borderStyle:selected==false?"dashed":"solid"}}>
             {selected==false?(<View style={{display:'flex',flexDirection:'row',justifyContent:'center',alignItems:'center',minHeight:100}}>
             <Icon name="upload-file"  />
                     <Text style={upload.desc_text_5}>  Upload CV/Resume</Text>
@@ -121,7 +124,13 @@ function UploadCV(){
             <View style={{position:'absolute',width:'100%',height:70,backgroundColor:colors.background,bottom:0,display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'row'}}>
                 {/* Bottom button */}
                 
-                <TouchableOpacity  style={{height:50,width:'80%',backgroundColor:colors.primary,display:'flex',justifyContent:'center',alignItems:'center',borderRadius:6}} activeOpacity={0.8}>
+                <TouchableOpacity onPress={()=>{if(selected==true){
+                    navigation.navigate("UploadCVSuccess",{
+                        filename:name,filesize:size
+                    })}else{
+                        Alert.alert('NO FILE SELECTED','Please select a file for upload')
+                    }
+                }}  style={{height:50,width:'80%',backgroundColor:colors.primary,display:'flex',justifyContent:'center',alignItems:'center',borderRadius:6}} activeOpacity={0.8}>
                         <Text style={[upload.desc_text_3,{color:'white'}]}>APPLY NOW</Text>
                 </TouchableOpacity>
 

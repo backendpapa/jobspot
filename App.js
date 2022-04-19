@@ -26,6 +26,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Description from './screens/Home/DescriptionScreen/DescriptionScreen';
 import { colors } from './constant';
 import UploadCV from './screens/Home/UploadCv/UploadCV';
+import UploadCVSuccess from './screens/Home/UploadCVSuccess/UploadCVSuccess';
+import { Icon } from '@rneui/base';
+
 
 
 const Tab = createBottomTabNavigator();
@@ -55,9 +58,16 @@ function App() {
         <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
         <Stack.Screen name="ForgotPasswordEmail" component={ForgotPasswordEmail} />
         <Stack.Screen name="ForgotPasswordSuccess" component={ForgotPasswordSuccess} />
-        <Stack.Screen options={{headerShown:true, headerStyle:{backgroundColor:colors.background_2},headerTransparent:true,headerTitle:''}} name="Description" component={Description} />
+        <Stack.Screen options={{headerShown:true, headerStyle:{backgroundColor:colors.background_2},headerTransparent:true,headerTitle:'',headerRight:({})=>{
+          return <Icon name="more-vert" />
+        }}} name="Description" component={Description} />
         
-        <Stack.Screen options={{headerShown:true, headerStyle:{backgroundColor:colors.background_2},headerTransparent:true,headerTitle:''}} name="UploadCV" component={UploadCV} />
+        <Stack.Screen options={{headerShown:true, headerStyle:{backgroundColor:colors.background_2},headerTransparent:true,headerTitle:'',headerRight:({})=>{
+          return <Icon name="more-vert" />
+        }}} name="UploadCV" component={UploadCV} />
+        <Stack.Screen  options={{headerShown:true, headerStyle:{backgroundColor:colors.background_2},headerTransparent:true,headerTitle:()=>{return <Text></Text>},headerRight:({})=>{
+          return <Icon name="more-vert" />
+        }}} name="UploadCVSuccess"  component={UploadCVSuccess} />
         <Stack.Screen name="HomeScreen" component={MyTabs} />
       </Stack.Navigator>
     </NavigationContainer>

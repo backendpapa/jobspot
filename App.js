@@ -28,6 +28,7 @@ import { colors } from './constant';
 import UploadCV from './screens/Home/UploadCv/UploadCV';
 import UploadCVSuccess from './screens/Home/UploadCVSuccess/UploadCVSuccess';
 import { Icon } from '@rneui/base';
+import MainSearch from './screens/Search/MainSearch/MainSearch';
 
 
 
@@ -36,8 +37,8 @@ const Tab = createBottomTabNavigator();
 function MyTabs() {
   return (
     <Tab.Navigator screenOptions={{headerShown:false}}>
-      <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Settings" component={Signup} />
+      <Tab.Screen name="Home"  component={Home} />
+      <Tab.Screen  name="Settings" component={Signup} />
     </Tab.Navigator>
   );
 }
@@ -68,6 +69,10 @@ function App() {
         <Stack.Screen  options={{headerShown:true, headerStyle:{backgroundColor:colors.background_2},headerTransparent:true,headerTitle:()=>{return <Text></Text>},headerRight:({})=>{
           return <Icon name="more-vert" />
         }}} name="UploadCVSuccess"  component={UploadCVSuccess} />
+        
+        <Stack.Screen  options={{headerShown:true,headerTransparent:true,headerTitle:()=>{return <Text></Text>},headerRight:({})=>{
+          return <Icon color={'white'} name="more-vert" />
+        },headerTintColor:'white'}} name="MainSearch"  component={MainSearch} />
         <Stack.Screen name="HomeScreen" component={MyTabs} />
       </Stack.Navigator>
     </NavigationContainer>

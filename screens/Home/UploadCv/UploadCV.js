@@ -1,5 +1,5 @@
 import React,{useCallback} from "react";
-import {View,Text,StyleSheet,Image,TouchableOpacity, Alert, TextInput} from 'react-native'
+import {View,Text,StyleSheet,Image,TouchableOpacity, Alert, TextInput, KeyboardAvoidingView} from 'react-native'
 import { colors,fonts,sizes } from "../../../constant";
 import google from '../../../assets/images/google.png'
 import { Icon } from "@rneui/base";
@@ -103,6 +103,7 @@ function UploadCV(){
             <Text style={[upload.desc_text_3,{color:colors.primary}]}>Information
             </Text>
             <View style={{marginTop:20}}>
+                <KeyboardAvoidingView>
                 <TextInput style={{height:230,
         backgroundColor: 'white',
         borderRadius: 10,
@@ -111,6 +112,7 @@ function UploadCV(){
         color: colors.primary,
         padding:25,display:'flex'}} textAlignVertical="top" placeholder={`Explain why you are the right person for ${'\n'}the job`}  multiline>
                 </TextInput>
+                </KeyboardAvoidingView>
             </View>
             </View>
             </View>
@@ -119,7 +121,7 @@ function UploadCV(){
             <View style={{position:'absolute',width:'100%',height:70,backgroundColor:colors.background,bottom:0,display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'row'}}>
                 {/* Bottom button */}
                 
-                <TouchableOpacity onPress={()=>{navigation.navigate('UploadCV')}} style={{height:50,width:'80%',backgroundColor:colors.primary,display:'flex',justifyContent:'center',alignItems:'center',borderRadius:6}} activeOpacity={0.8}>
+                <TouchableOpacity  style={{height:50,width:'80%',backgroundColor:colors.primary,display:'flex',justifyContent:'center',alignItems:'center',borderRadius:6}} activeOpacity={0.8}>
                         <Text style={[upload.desc_text_3,{color:'white'}]}>APPLY NOW</Text>
                 </TouchableOpacity>
 

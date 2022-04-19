@@ -5,12 +5,15 @@ import profile from '../../../assets/images/profile.png'
 import woman from '../../../assets/images/woman2.png'
 import job from '../../../assets/images/job.png'
 import Card from '../../../utils/CardComponent/Card'
+import { useNavigation } from "@react-navigation/core";
+
 
 
 const jobs=[1,2,3,4,5]
 
 function Home({navigation}){
     const home=homeStyle
+    const navigation2=useNavigation()
     React.useEffect(()=>{
         
     }
@@ -47,7 +50,7 @@ function Home({navigation}){
             <View style={{marginTop:20}}>
                 <View style={{display:'flex',gap:10,flexDirection:'row',height:200}}>
                     {/* Remote job button */}
-                    <TouchableOpacity activeOpacity={0.8} style={{flex:1,backgroundColor:colors.sega,marginRight:10,borderRadius:10,display:'flex',justifyContent:'center',alignItems:'center'}}>
+                    <TouchableOpacity onPress={()=>{navigation.navigate('MainSearch')}} activeOpacity={0.8} style={{flex:1,backgroundColor:colors.sega,marginRight:10,borderRadius:10,display:'flex',justifyContent:'center',alignItems:'center'}}>
                         <Image source={job} style={{height:40,width:40,marginBottom:10}} />
                         <Text style={home.home_text_3}>44.5K</Text>
                         <Text style={home.home_text_4}>Remote Job</Text>
@@ -55,13 +58,13 @@ function Home({navigation}){
 
                     <View style={{flex:1,marginLeft:10,borderRadius:10,display:'flex',justifyContent:'space-between'}}>
                         {/* FUll time button */}
-                        <TouchableOpacity activeOpacity={0.8} style={{height:'45%',backgroundColor:colors.tertiary_deep,borderRadius:10,display:'flex',justifyContent:'center',alignItems:'center'}}>
+                        <TouchableOpacity onPress={()=>{navigation.navigate('MainSearch')}} activeOpacity={0.8} style={{height:'45%',backgroundColor:colors.tertiary_deep,borderRadius:10,display:'flex',justifyContent:'center',alignItems:'center'}}>
                             <Text style={home.home_text_3}>66.8K</Text>
                             <Text style={home.home_text_4}>Full Time</Text>
                         </TouchableOpacity>
 
                         {/* Part time button */}
-                        <TouchableOpacity activeOpacity={0.8} style={{height:'45%',backgroundColor:colors.ultra_light,borderRadius:10,display:'flex',justifyContent:'center',alignItems:'center'}}>
+                        <TouchableOpacity onPress={()=>{navigation.navigate('MainSearch')}} activeOpacity={0.8} style={{height:'45%',backgroundColor:colors.ultra_light,borderRadius:10,display:'flex',justifyContent:'center',alignItems:'center'}}>
                         <Text style={home.home_text_3}>38.9K</Text>
                             <Text style={home.home_text_4}>Part Time</Text>
                         </TouchableOpacity>

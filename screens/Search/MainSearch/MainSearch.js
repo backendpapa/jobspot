@@ -1,10 +1,23 @@
 import { Icon } from "@rneui/base";
 import React from "react";
-import { View, Text, StyleSheet, TextInput,ImageBackground, Image } from 'react-native'
+import { View, Text, StyleSheet, TextInput,ImageBackground, Image, TouchableOpacity, ScrollView } from 'react-native'
 import { colors, fonts, sizes } from "../../../constant";
 import mainbg from '../../../assets/images/mainbg.png'
+import Card from '../../../utils/CardComponent/Card2'
+import google from '../../../assets/images/google.png'
+import dribble from '../../../assets/images/dribbble.png'
 
-
+const jobs=[1,2,3,4,5,6,7,8]
+const opportunity=[
+    {title:"UI/UX Designer",subtitle:"Google inc . Carlifonia, USA",icon:google,color:colors.grey_light,amount:15},
+    {title:"Lead Designer",subtitle:"Dribble inc . Carlifonia, USA",icon:dribble,color:colors.pinky,amount:20},
+    {title:"UI/UX Designer",subtitle:"Google inc . Carlifonia, USA",icon:google,color:colors.grey_light,amount:15},
+    {title:"Lead Designer",subtitle:"Dribble inc . Carlifonia, USA",icon:dribble,color:colors.pinky,amount:20},
+    {title:"UI/UX Designer",subtitle:"Google inc . Carlifonia, USA",icon:google,color:colors.grey_light,amount:15},
+    {title:"Lead Designer",subtitle:"Dribble inc . Carlifonia, USA",icon:dribble,color:colors.pinky,amount:20},
+    {title:"UI/UX Designer",subtitle:"Google inc . Carlifonia, USA",icon:google,color:colors.grey_light,amount:15},
+    {title:"Lead Designer",subtitle:"Dribble inc . Carlifonia, USA",icon:dribble,color:colors.pinky,amount:20},
+]
 
 function MainSearch() {
     const main = mainStyle
@@ -37,11 +50,25 @@ function MainSearch() {
 
             {/* Main body */}
 
-            <View style={{paddingLeft:25,paddingRight:25,marginTop:10}}>
-                <View>
-                    <View style={{height:50,width:50,backgroundColor:colors.primary,borderRadius:15,justifyContent:'center',display:'flex',alignItems:'center'}}>
+            <View style={{paddingLeft:25,paddingRight:25,marginTop:20}}>
+                <View style={{display:'flex',flexDirection:'row'}}>
+                    <TouchableOpacity activeOpacity={0.8} style={{height:50,width:50,backgroundColor:colors.primary,borderRadius:15,justifyContent:'center',display:'flex',alignItems:'center'}}>
                         <Icon name="tune" color={'white'} style={{transform:[{rotateZ:'90deg'}]}} />
+                    </TouchableOpacity>
+                    <View style={{width:'100%',marginLeft:10}}>
+                        <TouchableOpacity activeOpacity={0.8} style={{height:50,width:'80%',backgroundColor:colors.grey_light,borderRadius:15,padding:5,display:'flex',alignItems:'center',justifyContent:'center'}} >
+                            <Text style={main.main_text_1}>Specialization</Text>
+                        </TouchableOpacity>
                     </View>
+                </View>
+
+
+                <View style={{marginTop:20}}>
+                    <ScrollView showsVerticalScrollIndicator={false}>
+                    {opportunity.map((item,i)=>{
+                        return (<Card icon={item.icon} title={item.title} subtitle={item.subtitle} color={item.color} key={i} amount={item.amount} />)
+                    })}
+                    </ScrollView>
                 </View>
             </View>
         </View>
@@ -56,6 +83,7 @@ const mainStyle = StyleSheet.create({
         display: 'flex',
         position: 'relative',
         height: '100%',
+        
 
     },
     text_input: {
@@ -68,5 +96,10 @@ const mainStyle = StyleSheet.create({
         paddingLeft: 50,
         paddingRight: 55,
         marginBottom: 15
+    },
+    main_text_1:{
+        fontFamily:fonts.DmSans_Regular,
+        fontSize:sizes.h12,
+        color:colors.primary
     }
 })

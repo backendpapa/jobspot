@@ -49,7 +49,9 @@ function UploadCVSuccess(){
             </View>
 
             <View style={{marginTop:20,display:'flex',justifyContent:'center',alignItems:'center'}}>
-            <TouchableOpacity  style={{height:60,width:'80%',backgroundColor:colors.tertiary,display:'flex',justifyContent:'center',alignItems:'center',borderRadius:6,marginBottom:10}} activeOpacity={0.8}>
+            <TouchableOpacity onPress={()=>{
+                    navigation.navigate('MainSearch')
+                }}  style={{height:60,width:'80%',backgroundColor:colors.tertiary,display:'flex',justifyContent:'center',alignItems:'center',borderRadius:6,marginBottom:10}} activeOpacity={0.8}>
                         <Text style={[upload.desc_text_3,{color:colors.primary}]}>FIND A SIMILAR JOB</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={()=>{

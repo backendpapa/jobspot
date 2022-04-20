@@ -56,7 +56,7 @@ export default Card;
 
 const cardStyle=StyleSheet.create({
     container:{
-        height:160,
+        minHeight:160,
         borderRadius:25,
         backgroundColor:'white',
         padding:20,

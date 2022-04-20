@@ -13,5 +13,7 @@ module.exports={
     infi:"#fde0d5",
     incognito:"#afecfe",
     grey:"#f2f2f2",
-    tertiary_light:"#F0EEF8"
+    tertiary_light:"#F0EEF8",
+    grey_light:"#eeeef1",
+    pinky:"#fdeff5"
 }

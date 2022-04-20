@@ -70,9 +70,7 @@ function App() {
           return <Icon name="more-vert" />
         }}} name="UploadCVSuccess"  component={UploadCVSuccess} />
         
-        <Stack.Screen  options={{headerShown:true,headerTransparent:true,headerTitle:()=>{return <Text></Text>},headerRight:({})=>{
-          return <Icon color={'white'} name="more-vert" />
-        },headerTintColor:'white'}} name="MainSearch"  component={MainSearch} />
+        <Stack.Screen  options={{headerShown:true,headerTransparent:true,headerTitle:()=>{return <Text></Text>},headerTintColor:'white'}} name="MainSearch"  component={MainSearch} />
         <Stack.Screen name="HomeScreen" component={MyTabs} />
       </Stack.Navigator>
     </NavigationContainer>

@@ -6,6 +6,8 @@ import mainbg from '../../../assets/images/mainbg.png'
 import Card from '../../../utils/CardComponent/Card2'
 import google from '../../../assets/images/google.png'
 import dribble from '../../../assets/images/dribbble.png'
+import { useNavigation } from "@react-navigation/core";
+
 
 const jobs=[1,2,3,4,5,6,7,8]
 const opportunity=[
@@ -21,6 +23,7 @@ const opportunity=[
 
 function MainSearch() {
     const main = mainStyle
+    const navigation=useNavigation()
     return (
         <View style={main.container}>
             <View style={{position:'absolute',width:'100%',height:250,overflow:'hidden',borderBottomRightRadius:30,borderBottomLeftRadius:30}}>
@@ -52,11 +55,15 @@ function MainSearch() {
 
             <View style={{paddingLeft:25,paddingRight:25,marginTop:20}}>
                 <View style={{display:'flex',flexDirection:'row'}}>
-                    <TouchableOpacity activeOpacity={0.8} style={{height:50,width:50,backgroundColor:colors.primary,borderRadius:15,justifyContent:'center',display:'flex',alignItems:'center'}}>
+                    <TouchableOpacity onPress={()=>{
+                        navigation.navigate('Specialization')
+                    }} activeOpacity={0.8} style={{height:50,width:50,backgroundColor:colors.primary,borderRadius:15,justifyContent:'center',display:'flex',alignItems:'center'}}>
                         <Icon name="tune" color={'white'} style={{transform:[{rotateZ:'90deg'}]}} />
                     </TouchableOpacity>
                     <View style={{width:'100%',marginLeft:10}}>
-                        <TouchableOpacity activeOpacity={0.8} style={{height:50,width:'80%',backgroundColor:colors.grey_light,borderRadius:15,padding:5,display:'flex',alignItems:'center',justifyContent:'center'}} >
+                        <TouchableOpacity onPress={()=>{
+                        navigation.navigate('Specialization')
+                    }} activeOpacity={0.8} style={{height:50,width:'80%',backgroundColor:colors.grey_light,borderRadius:15,padding:5,display:'flex',alignItems:'center',justifyContent:'center'}} >
                             <Text style={main.main_text_1}>Specialization</Text>
                         </TouchableOpacity>
                     </View>

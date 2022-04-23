@@ -39,9 +39,34 @@ const Tab = createBottomTabNavigator();
 
 function MyTabs() {
   return (
-    <Tab.Navigator screenOptions={{headerShown:false}}>
-      <Tab.Screen name="Home"  component={Home} />
-      <Tab.Screen  name="Settings" component={Signup} />
+    <Tab.Navigator screenOptions={{headerShown:false,tabBarShowLabel:false,tabBarStyle:{height:70}}}>
+      <Tab.Screen options={{tabBarIcon:(({color,focused})=>{
+        return <View>
+          <Icon color={focused==true?colors.ultra:colors.primary} name="home" type="feather" />
+        </View>
+      })}} name="Home"  component={Home} />
+      <Tab.Screen  options={{tabBarIcon:(({color,focused})=>{
+        return <View>
+          <Icon color={focused==true?colors.ultra:colors.primary} name="flow-tree" type="entypo" />
+        </View>
+      })}} name="test1" component={Signup} />
+
+<Tab.Screen  options={{tabBarIcon:(({color,focused})=>{
+        return <View>
+          <Icon size={45} color={colors.primary}  name="add-circle" type="ion" />
+        </View>
+      })}} name="test2" component={Signup} />
+
+<Tab.Screen  options={{tabBarIcon:(({color,focused})=>{
+        return <View>
+          <Icon color={focused==true?colors.ultra:colors.primary} name="comment-outline" type="material-community" />
+        </View>
+      })}} name="test3" component={Login} />
+       <Tab.Screen  options={{tabBarIcon:(({color,focused})=>{
+        return <View>
+          <Icon color={focused==true?colors.ultra:colors.primary} name="bookmark-outline" type="material-community" />
+        </View>
+      })}} name="test4" component={Signup} />
     </Tab.Navigator>
   );
 }

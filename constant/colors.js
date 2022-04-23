@@ -15,5 +15,8 @@ module.exports={
     grey:"#f2f2f2",
     tertiary_light:"#F0EEF8",
     grey_light:"#eeeef1",
-    pinky:"#fdeff5"
+    pinky:"#fdeff5",
+    ultra_sur:"#fff5f3",
+    grey_sur:"#ccc4c2",
+    ultra_ama:"#faf2ea"
 }

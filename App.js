@@ -29,6 +29,8 @@ import UploadCV from './screens/Home/UploadCv/UploadCV';
 import UploadCVSuccess from './screens/Home/UploadCVSuccess/UploadCVSuccess';
 import { Icon } from '@rneui/base';
 import MainSearch from './screens/Search/MainSearch/MainSearch';
+import Specialization from './screens/Search/Specialization/Specialization';
+
 
 
 
@@ -71,6 +73,7 @@ function App() {
         }}} name="UploadCVSuccess"  component={UploadCVSuccess} />
         
         <Stack.Screen  options={{headerShown:true,headerTransparent:true,headerTitle:()=>{return <Text></Text>},headerTintColor:'white'}} name="MainSearch"  component={MainSearch} />
+        <Stack.Screen  options={{headerShown:true,headerTransparent:true,headerTitle:()=>{return <Text></Text>}}} name="Specialization"  component={Specialization} />
         <Stack.Screen name="HomeScreen" component={MyTabs} />
       </Stack.Navigator>
     </NavigationContainer>

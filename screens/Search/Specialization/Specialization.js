@@ -12,6 +12,8 @@ import health from '../.././../assets/images/icons/health.png'
 import programmer from '../.././../assets/images/icons/programmer.png'
 import { Picker } from "@react-native-picker/picker";
 import { Slider, } from '@miblanchard/react-native-slider'
+import { useNavigation } from "@react-navigation/core";
+
 
 
 let specials = [
@@ -38,7 +40,7 @@ let location = [
 ]
 
 function Specialization() {
-
+    const navigation = useNavigation();
     const special = specialization
     const [showFilter, setShowFilter] = React.useState(false)
     const [selectedValue, setSelectedValue] = React.useState('design')
@@ -77,7 +79,9 @@ function Specialization() {
                         <View style={{ marginTop: 20 }}>
                             <View style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' }}>
                                 {specials.map((item, i) => {
-                                    return (<TouchableOpacity onPressOut={() => {
+                                    return (<TouchableOpacity onPress={()=>{
+                                        navigation.navigate('JobSearch')
+                                    }} onPressOut={() => {
                                         setIi(null)
                                     }} onPressIn={() => {
                                         let ii = i
